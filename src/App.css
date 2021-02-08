@@ -70,6 +70,7 @@ h1 {
   );
   color: #fff;
   text-transform: capitalize;
+  margin-bottom: 20px;
 }
 
 .todo-input.edit {
@@ -107,13 +108,23 @@ h1 {
   align-items: center;
   font-size: 24px;
   cursor: pointer;
+  z-index: 999;
+  margin-left: 25px;
+  margin-bottom: 10px;
 }
 
 .delete-icon {
   margin-right: 5px;
   color: #fff;
+  z-index: 9999;
+  /* position: absolute;
+  left: 801px;
+  top: 400px; */
+  color: red;
+  
 }
 
 .edit-icon {
   color: #fff;
+  color: green;
 }

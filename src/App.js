@@ -58,6 +58,7 @@ function App() {
       if (todo.id === id) {
         todo.text = editingText;
       }
+      
       return todo;
     });
 
@@ -84,15 +85,26 @@ function App() {
       {todos.map((todo) => (
         <div key={todo.id}>
           {todoEditing === todo.id ? (
-            <input
-              className="todo-input edit"
-              type="text"
-              onChange={(e) => setEditingText(e.target.value)}
-              value={editingText}
-            />
+            <>
+              <input
+                className="todo-input edit"
+                type="text"
+                onChange={(e) => setEditingText(e.target.value)}
+                value={editingText}
+              />
+              <button className="todo-button" onClick={() => editTodo(todo.id)}>
+                Editar
+              </button>
+            </>
           ) : (
-            <div className={todo.completed ? "todo-row complete" : "todo-row"} onClick={() => toggleComplete(todo.id)}>
-              {todo.text}
+            <>
+              <div
+                className={todo.completed ? "todo-row complete" : "todo-row"}
+                onClick={() => toggleComplete(todo.id)}
+              >
+                {todo.text}
+              </div>
+
               <div className="icons">
                 {/* <input
                   type="checkbox"
@@ -120,7 +132,7 @@ function App() {
                   />
                 )}
               </div>
-            </div>
+            </>
           )}
 
           {/* <button className="todo-button" onClick={() => deleteTodo(todo.id)}>
