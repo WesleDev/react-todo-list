@@ -55,9 +55,12 @@ function App() {
 
   function editTodo(id) {
     const updatedTodos = [...todos].map((todo) => {
+      
       if (todo.id === id) {
         todo.text = editingText;
       }
+
+      
       
       return todo;
     });
